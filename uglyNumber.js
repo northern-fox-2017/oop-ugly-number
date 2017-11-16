@@ -1,6 +1,7 @@
 class UglyNumber {
   constructor(){
     this.uglyArray = []
+    this.uglyNumber = 1
   }
   maxDivide(number, divisible) {
     while(number % divisible == 0) {
@@ -29,14 +30,13 @@ class UglyNumber {
   }
   getUglyArray(number){
     let uglyArray = []
-    let uglyNumber = 1
     for (let i = 0; i < number; i++) {
-      if (this.isUgly(uglyNumber) != 1) {
+      if (this.isUgly(this.uglyNumber) != 1) {
         i -= 1
-        uglyNumber += 1
+        this.uglyNumber += 1
       } else {
-        uglyArray.push(uglyNumber)
-        uglyNumber += 1
+        uglyArray.push(this.uglyNumber)
+        this.uglyNumber += 1
       }
     }
     return uglyArray
