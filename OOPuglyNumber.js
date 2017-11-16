@@ -1,6 +1,6 @@
 class UglyNumber {
   constructor(i) {
-    this.i = 0
+    this.i = i
   }
 
   maxDivides(number, divisible) {
@@ -18,28 +18,28 @@ class UglyNumber {
     return (numberUgly == 1) ? true : false;
   }
 
-  getUglyNo(input) {
-    // let i = 1;
+  getUglyNo() {
+    let i = 1;
     let countUglyNumber = 1; // ugly number count
     // debugger
-    while(input > countUglyNumber) {
-      this.i++;
-      if(this.isUgly(this.i) == 1) {
+    while(this.i > countUglyNumber) {
+      i++;
+      if(this.isUgly(i) == 1) {
         countUglyNumber++;
       }
     }
-    return this.i;
+    return i
   }
 
-  getUglyArray(input) {
+  getUglyArray() {
     var uglyArr = [];
     let countUglyNumber = 1; // ugly number count
-
-    while(input > countUglyNumber) {
-      this.i++;
-      if(this.isUgly(this.i) == 1) {
+    let i = 1;
+    while(this.i > countUglyNumber) {
+      i++;
+      if(this.isUgly(i) == 1) {
         countUglyNumber++;
-        uglyArr.push(this.i)
+        uglyArr.push(i)
       }
     }
     return uglyArr
@@ -47,11 +47,13 @@ class UglyNumber {
 
 }
 
+let number7 = new UglyNumber(7);
+let number15 = new UglyNumber(15);
 
-var number = new UglyNumber
-
-// console.log(number.getUglyNo(15)); 24
-console.log(number.getUglyArray(15));
+// console.log(number7); //24
+// console.log(number7.getUglyNo());
+console.log(number15.getUglyNo());
+console.log(number15.getUglyArray());
 
 
 // console.log(getUglyNo(150)); //5832
