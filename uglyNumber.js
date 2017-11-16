@@ -3,7 +3,12 @@
 class UglyNumber {
   constructor(input) {
     this.input = input
+    this.arr = [1]
     this.result = 1
+  }
+
+  getUglyArray() {
+    return this.arr
   }
 
   getUglyNo() {
@@ -22,7 +27,12 @@ class UglyNumber {
     numberUgly = this.maxDivide(numberUgly, 2);
     numberUgly = this.maxDivide(numberUgly, 3);
     numberUgly = this.maxDivide(numberUgly, 5);
-    return (numberUgly == 1) ? true : false;
+    if (numberUgly == 1) {
+      this.arr.push(this.result)
+      return true
+    } else {
+      return false
+    }
   }
 
   maxDivide(number, divisible) {
@@ -36,12 +46,16 @@ class UglyNumber {
 //driver code
 let UglyNo150 = new UglyNumber(150)
 console.log(UglyNo150.getUglyNo()); //5832
+console.log(UglyNo150.getUglyArray());
 
 let UglyNo7 = new UglyNumber(7)
 console.log(UglyNo7.getUglyNo()); //8
+console.log(UglyNo7.getUglyArray());
 
 let UglyNo10 = new UglyNumber(10)
 console.log(UglyNo10.getUglyNo()); //12
+console.log(UglyNo10.getUglyArray());
 
 let UglyNo15 = new UglyNumber(15)
 console.log(UglyNo15.getUglyNo()); //24
+console.log(UglyNo15.getUglyArray());
