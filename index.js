@@ -3,6 +3,9 @@
 class UglyNumber {
   constructor(uglyNo){
     this.uglyNo = uglyNo;
+    this.i = 0;
+    this.countUglyNumber = 0;
+    this.result =[];
 
   }
 
@@ -15,47 +18,46 @@ class UglyNumber {
     return this.isNumUgly;
   }
 
-  isUgly(ugly){
-    this.ugly = ugly;
+  isUgly(){
+
+    this.ugly = this.i;
+    debugger
     this.ugly = this.maxDivide(this.ugly, 2);
     this.ugly = this.maxDivide(this.ugly, 3);
-    this.ugly = this. maxDivide(this.ugly, 5);
+    this.ugly = this.maxDivide(this.ugly, 5);
 
     return (this.ugly === 1) ? true : false;
   }
 
   getUglyNo() {
-    let i = 1;
-    let countUglyNumber = 1;
-    while(this.uglyNo > countUglyNumber){
-      i++;
-      if(this.isUgly(i) === true ){
-        countUglyNumber++;
+    while(this.uglyNo > this.countUglyNumber){
+      this.i++;
+      if(this.isUgly() === true ){
+        this.countUglyNumber++;
       }
     }
-    return i;
+    return this.i;
 
   }
 
-  getUglyArray(){
-    let i = 0;
-    let countUglyNumber = 1;
-    let result = [];
-    debugger;
-    while(this.uglyNo >= countUglyNumber){
-      i++;
-      if(this.isUgly(i) === true ){
-        result.push(i);
-        countUglyNumber++;
+  getUglyArray(deret){
+    this.deret = deret;
+    this.i = 0
+    this.countUglyNumber = 0;
+    while(this.deret > this.countUglyNumber){
+      this.i++;
+      if(this.isUgly() === true){
+        this.result.push(this.i);
+        this.countUglyNumber++;
       }
     }
-    return result;
+    return this.result;
   }
   
 }
 
 let uglyNumberAndrey = new UglyNumber(15);
 console.log(uglyNumberAndrey.getUglyNo());
-console.log(uglyNumberAndrey.getUglyArray());
+console.log(uglyNumberAndrey.getUglyArray(15));
 
 // console.log(uglyNumberAndrey.getUglyNo());
