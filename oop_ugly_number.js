@@ -1,6 +1,8 @@
 class UglyNumber {
   constructor() {
     this.ugly = []
+    this.i = 1
+    this.countUglyNumber = 1
   }
 
   maxDivides(number, divisible) {
@@ -21,22 +23,24 @@ class UglyNumber {
   }
 
   getUglyNo(input) {
-    let i = 1;
-    let countUglyNumber = 1; // ugly number count
+    // ugly number count
+    // this.i = 1
     debugger
     // this.ugly.push(i)
-    while(input > countUglyNumber) {
-      i++;
-      if(this.isUgly(i) == 1) {
+    while(input > this.countUglyNumber) {
+      this.i++;
+      // console.log(this.i);
+      if(this.isUgly(this.i) == 1) {
         this.getUglyArray()
-        countUglyNumber++;
+        this.countUglyNumber++;
       }
     }
-    return i;
+    return this.i;
   }
   getUglyArray (input){
     for (var i = 1; i <= input; i++) {
       let uglynumber = this.getUglyNo(i)
+      // console.log(uglynumber);
       this.ugly.push(uglynumber)
     }
     return this.ugly
@@ -46,4 +50,5 @@ class UglyNumber {
 
 let number = new UglyNumber ()
 console.log(number.getUglyNo(7));
+
 console.log(number.getUglyArray(15));
