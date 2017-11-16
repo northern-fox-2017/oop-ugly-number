@@ -46,6 +46,6 @@ class UglyNumber {
 //driver code
 
 console.log(new UglyNumber().getUglyArray(150)); //5832
-console.log(new UglyNumber().getUglyNo(7)); //8
-console.log(new UglyNumber().getUglyNo(10)); //12
-console.log(new UglyNumber().getUglyNo(15)); //24
+console.log(new UglyNumber().getUglyArray(7)); //8
+console.log(new UglyNumber().getUglyArray(10)); //12
+console.log(new UglyNumber().getUglyArray(15)); //24
