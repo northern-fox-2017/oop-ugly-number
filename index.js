@@ -55,6 +55,7 @@ class UglyNumber {
 }
 
 let uglyNumberAndrey = new UglyNumber(15);
+console.log(uglyNumberAndrey.getUglyNo());
 console.log(uglyNumberAndrey.getUglyArray());
 
 // console.log(uglyNumberAndrey.getUglyNo());
