@@ -3,7 +3,6 @@
 class UglyNumber {
     constructor(){
         this.i = 1;
-        this.countUglyNumber = 1;
         this.result = [];
     }
 
@@ -24,12 +23,13 @@ class UglyNumber {
 
     getUglyNo(input) {
         this.result.push(this.i);
+        let countUglyNumber = 1;
         
-        while (input > this.countUglyNumber) {
+        while (input > countUglyNumber) {
             this.i++;
             if (this.isUgly() == 1) {
                 this.result.push(this.i);
-                this.countUglyNumber++;
+                countUglyNumber++;
             }
         }
         return this;
