@@ -1,34 +1,36 @@
 class UglyNumber {
-  constructor(number){
+  constructor(number) {
     this.number = number
     this.uglyNumbers = []
+    this.i = 1
+
   }
-  maxDivides (number, divisible){
-    while(number % divisible == 0) {
+  maxDivides(number, divisible) {
+    while (number % divisible == 0) {
       number = number / divisible;
     }
     return number;
   }
-  isUgly (numberUgly){
+  isUgly() {
+    let numberUgly = this.i
     numberUgly = this.maxDivides(numberUgly, 2);
     numberUgly = this.maxDivides(numberUgly, 3);
     numberUgly = this.maxDivides(numberUgly, 5);
+    this.i = numberUgly === 1 ? this.i : numberUgly
     return numberUgly === 1
   }
-  getUglyNo(){
-    let i = 1;
+  getUglyNo() {
     let countUglyNumber = 1; // ugly number count
-  
-    while(this.number > countUglyNumber) {
-      i++;
-      if(this.isUgly(i)) {
-        this.uglyNumbers.push(i)
+    while (this.number > countUglyNumber) {
+      this.i++
+      if (this.isUgly()) {
+        this.uglyNumbers.push(this.i)
         countUglyNumber++;
       }
     }
-    return i;
+    return this.i;
   }
-  getUglyArray(){
+  getUglyArray() {
     return this.uglyNumbers
   }
 }
