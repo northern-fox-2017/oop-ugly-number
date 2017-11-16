@@ -1,6 +1,7 @@
 class UglyNumber {
     constructor(){
        this.hasilSemuaArray = [];
+       this.i = 1;
     }
     
     maxDivide(number, divisible) {
@@ -24,13 +25,13 @@ class UglyNumber {
 
     getUglyNo(input) {  
         debugger;
-        let i = 1;
+        //let i = 1;
         let countUglyNumber = 1; // ugly number count
         
         while(input > countUglyNumber) {
-          i++;
-          if(this.isUgly(i) == 1) {
-            this.getUglyArray(i);
+          this.i++;
+          if(this.isUgly(this.i) == 1) {
+            this.getUglyArray(this.i);
             countUglyNumber++;
           }
         }
