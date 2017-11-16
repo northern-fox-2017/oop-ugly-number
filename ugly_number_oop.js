@@ -2,7 +2,7 @@
 class UglyNumber {
   constructor () {
     this.i = 1
-    this.arr = [1]
+    this.arr = []
   }
 
   maxDivides(number, divisible) {
@@ -24,6 +24,7 @@ class UglyNumber {
 
   getUglyNo(input) {
     let countUglyNumber = 1; // ugly number count
+    this.arr.push(this.i);
     while(input > countUglyNumber){
       this.i++;
       if(this.isUgly() == 1) {
