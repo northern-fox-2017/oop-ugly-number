@@ -1,7 +1,7 @@
 class  uglyNumber {
   constructor() {
     this.i = 1;
-    this.resultArr = [];
+    this.resultArr = [1];
   }
 
   maxDivide(number, divisible){
@@ -10,7 +10,8 @@ class  uglyNumber {
     }
     return number;
   }
-  isUgly(numberUgly){
+  isUgly(){
+    let numberUgly = this.i;
     numberUgly = this.maxDivide(numberUgly, 2);
     numberUgly = this.maxDivide(numberUgly, 3);
     numberUgly = this.maxDivide(numberUgly, 5);
@@ -21,7 +22,7 @@ class  uglyNumber {
 
     while(input > countUglyNumber) {
       this.i++;
-      if(this.isUgly(this.i) == 1) {
+      if(this.isUgly() == 1) {
         this.getUglyArray(this.i)
         countUglyNumber++;
       }
