@@ -14,7 +14,8 @@ class UglyNumber {
 
   }
 
-  isUgly(numberUgly) {
+  isUgly() {
+    let numberUgly = this.i
     numberUgly = this.maxDivides(numberUgly, 2);
     numberUgly = this.maxDivides(numberUgly, 3);
     numberUgly = this.maxDivides(numberUgly, 5);
@@ -28,7 +29,7 @@ class UglyNumber {
 
     while(input > countUglyNumber) {
       this.i++;
-      if(this.isUgly(this.i) == 1) {
+      if(this.isUgly() == 1) {
         this.getUglyArray(this.i)
         countUglyNumber++;
       }
