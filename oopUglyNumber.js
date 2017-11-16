@@ -35,6 +35,7 @@ class UglyNumber {
   }
 
   getUglyArray(input) {
+    this.uglyArray.unshift(1);
     return this.uglyArray;
   }
 }
@@ -44,4 +45,4 @@ console.log(uglyNumber.getUglyNo(150)); // 5832
 console.log(uglyNumber.getUglyNo(7)); // 8
 console.log(uglyNumber.getUglyNo(10)); // 12
 console.log(uglyNumber.getUglyNo(15)); // 24
-console.log(uglyNumber.getUglyArray(15)); // 24
+console.log(uglyNumber.getUglyArray(15)); // [ 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 16, 18, 20, 24 ]
