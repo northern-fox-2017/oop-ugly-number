@@ -3,6 +3,7 @@
 class UglyNumber {
     constructor(){
         this.i = 1;
+        this.countUglyNumber = 1;
         this.result = [];
     }
 
@@ -13,29 +14,29 @@ class UglyNumber {
         return number;
     };
 
-    isUgly(numberUgly) {
+    isUgly() {
+        let numberUgly = this.i;
         numberUgly = this.maxDivide(numberUgly, 2);
         numberUgly = this.maxDivide(numberUgly, 3);
         numberUgly = this.maxDivide(numberUgly, 5);
-
         return (numberUgly == 1) ? true : false;
     }
 
     getUglyNo(input) {
-        let countUglyNumber = 1; // ugly number count
-        this.getUglyArray(this.i);
-        while (input > countUglyNumber) {
+        this.result.push(this.i);
+        
+        while (input > this.countUglyNumber) {
             this.i++;
-            if (this.isUgly(this.i) == 1) {
-                this.getUglyArray(this.i);
-                countUglyNumber++;
+            if (this.isUgly() == 1) {
+                this.result.push(this.i);
+                this.countUglyNumber++;
             }
         }
         return this;
     }
 
     getUglyArray(input){
-        this.result.push(input);
+        this.getUglyNo(input);
         return this;
     }
 }
@@ -44,7 +45,7 @@ class UglyNumber {
 
 //driver code
 
-console.log(new UglyNumber().getUglyNo(150)); //5832
+console.log(new UglyNumber().getUglyArray(150)); //5832
 console.log(new UglyNumber().getUglyNo(7)); //8
 console.log(new UglyNumber().getUglyNo(10)); //12
 console.log(new UglyNumber().getUglyNo(15)); //24
